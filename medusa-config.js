@@ -26,6 +26,8 @@ import {
 
 loadEnv(process.env.NODE_ENV, process.cwd());
 
+const MEDUSA_BACKEND_URL = process.env.MEDUSA_BACKEND_URL || "https://mon-projet.onrender.com"
+
 const medusaConfig = {
   projectConfig: {
     databaseUrl: DATABASE_URL,
@@ -46,7 +48,7 @@ const medusaConfig = {
     }
   },
   admin: {
-    backendUrl: BACKEND_URL,
+    backendUrl: MEDUSA_BACKEND_URL,
     disable: SHOULD_DISABLE_ADMIN,
   },
   modules: [
@@ -69,7 +71,7 @@ const medusaConfig = {
             id: 'local',
             options: {
               upload_dir: 'static',
-              backend_url: `${BACKEND_URL}/static`
+              backend_url: `${MEDUSA_BACKEND_URL}/static`
             }
           }])
         ]
