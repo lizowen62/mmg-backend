@@ -12,7 +12,7 @@
     "headless",
     "medusa"
   ],
-  "type": "module", 
+  
   "scripts": {
     "build": "medusa build && node src/scripts/postBuild.js",
     "seed": "medusa exec ./src/scripts/seed.ts",
